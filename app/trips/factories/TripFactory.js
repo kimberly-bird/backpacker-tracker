@@ -12,7 +12,7 @@ angular
             value: function () {
                 return $http({
                     method: "GET",
-                    url: "https://employees-c9afe.firebaseio.com/employees/.json"
+                    url: "https://backpacker-tracker.firebaseio.com/trips/.json"
                 }).then(response => {
                     const data = response.data
 
@@ -29,22 +29,21 @@ angular
             value: function (key) {
                 return $http({
                     method: "GET",
-                    url: `https://employees-c9afe.firebaseio.com/employees/${key}/.json`
+                    url: `https://backpacker-tracker.firebaseio.com/trips/${key}/.json`
                 }).then(response => {
                     return response.data
                 })
             }
         },
         "add": {
-            value: function (employee) {
+            value: function (trip) {
                 return $http({
                     method: "POST",
-                    url: "https://employees-c9afe.firebaseio.com/employees/.json",
+                    url: "https://backpacker-tracker.firebaseio.com/trips/.json",
                     data: {
-                        "firstName": employee.firstName,
-                        "lastName": employee.lastName,
-                        "employmentStart": Date.now(),
-                        "employmentEnd": 0
+                        "country": trip.country,
+                        "departureDate": trip.departureDate,
+                        "returnDate": trip.returnDate
                     }
                 })
             }

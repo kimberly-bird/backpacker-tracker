@@ -1,0 +1,26 @@
+<section>
+    
+    <h2>Add a Trip!</h2>
+    <form>
+        <div>
+            Country: <input type="text" ng-model="newTrip.country" />
+        </div>
+        <br>
+        <div>
+            Departure Date: <input type="date" ng-model="newTrip.departureDate" />
+        </div>
+        <br>
+        <div>
+            Return Date: <input type="date" ng-model="newTrip.returnDate" />
+        </div>
+        <br>
+        <!-- will need to find way to add photo to large file storage in firebase -->
+        <div>
+            Photo will be uploaded here
+            <button>Upload</button>
+        </div>
+        <br>
+        <button ng-click="addTrip()">Add</button>
+    </form>
+
+</section>

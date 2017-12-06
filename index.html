@@ -12,14 +12,40 @@
     <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
 
     <div ng-view></div>
+
+    <nav ng-include="'app/navigation/partials/footer.html'"></nav>
     
 
     <!-- angular -->
     <script src="./lib/node_modules/angular/angular.min.js"></script>
+    <!-- firebase -->
+    <script src="./lib/node_modules/firebase/firebase.js"></script>
+    <!-- angular route -->
+    <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
     <!-- app.js -->
     <script src="./app/app.js"></script>
     <!-- configuration -->
     <script src="./app/app.config.js"></script>
+
+    <!-- auth -->
+    <script src="./app/auth/factories/AuthFactory.js"></script>
+    <script src="./app/auth/controllers/AuthCtrl.js"></script>
+
+    <!-- trip factory -->
+    <script src="./app/trips/factories/TripFactory.js"></script>
+
+    <!-- list trips -->
+    <script src="./app/trips/controllers/listAllTripsCtrl.js"></script>
+    
+    <!-- add trips -->
+    <script src="./app/trips/controllers/addTripCtrl.js"></script>
+    
+    <!-- trip details -->
+    <script src="./app/trips/controllers/tripDetailCtrl.js"></script>
+    
+
+    <!-- nav -->
+    <script src="./app/navigation/controllers/NavCtrl.js"></script>
 </body>
 
 </html>

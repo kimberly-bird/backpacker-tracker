@@ -21,23 +21,23 @@ angular.module("backpackerApp").config(function ($routeProvider) {
      */
     $routeProvider
         .when("/", {
-            templateUrl: "app/trips/partials/list.html",
-            controller: "EmployeeListCtrl",
+            templateUrl: "app/trips/partials/listAllTrips.html",
+            controller: "listAllTripsCtrl",
             resolve: { isAuth }
         })
         .when("/trips/list", {
-            templateUrl: "app/trips/partials/list.html",
-            controller: "EmployeeListCtrl",
+            templateUrl: "app/trips/partials/listAllTrips.html",
+            controller: "listAllTripsCtrl",
             resolve: { isAuth }
         })
         .when('/trips/new', {
-            templateUrl: 'app/trips/partials/create.html',
-            controller: 'EmployeeCreateCtrl',
+            templateUrl: 'app/trips/partials/addTrip.html',
+            controller: 'addTripCtrl',
             resolve: { isAuth }
         })
-        .when('/trips/detail/:employeeId', {
-            templateUrl: 'app/trips/partials/detail.html',
-            controller: 'EmployeeDetailCtrl',
+        .when('/trips/detail/:tripId', {
+            templateUrl: 'app/trips/partials/tripDetail.html',
+            controller: 'tripDetailCtrl',
             resolve: { isAuth }
         })
         .when('/auth', {
