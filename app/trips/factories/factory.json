@@ -1,0 +1,22 @@
+{
+    "trips": [
+      {
+        "id": 1,
+        "country": "China",
+        "departureDate": "August 30, 2007",
+        "returnDate": "December 15, 2007"
+      },
+      {
+        "id": 2,
+        "country": "Russia",
+        "departureDate": "August 20, 2004",
+        "returnDate": "December 20, 2004"
+      },
+      {
+        "id": 3,
+        "country": "Hungary",
+        "departureDate": "May 15, 2011",
+        "returnDate": "August 30, 2001"
+      }
+    ]
+  }

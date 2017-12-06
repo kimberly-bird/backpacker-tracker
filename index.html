@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Backpacker Tracker</title>
+</head>
+
+<body ng-app="backpackerApp">
+
+    <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
+
+    <div ng-view></div>
+    
+
+    <!-- angular -->
+    <script src="./lib/node_modules/angular/angular.min.js"></script>
+    <!-- app.js -->
+    <script src="./app/app.js"></script>
+    <!-- configuration -->
+    <script src="./app/app.config.js"></script>
+</body>
+
+</html>

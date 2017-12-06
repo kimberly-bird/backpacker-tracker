@@ -1,0 +1,5 @@
+app/app.config.js
+lib/node_modules
+.DS_Store
+lib/package-lock.json
+lib/.eslintrc.json
