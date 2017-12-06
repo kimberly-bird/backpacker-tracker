@@ -37,16 +37,32 @@ angular
         },
         "add": {
             value: function (trip) {
-                return $http({
-                    method: "POST",
-                    url: "https://backpacker-tracker.firebaseio.com/trips/.json",
-                    data: {
-                        "country": trip.country,
-                        "departureDate": trip.departureDate,
-                        "returnDate": trip.returnDate
-                    }
+                return firebase.auth().currentUser.getIdToken(true)
+				.then(idToken => {
+                    return $http({
+                        method: "POST",
+                        url: `https://backpacker-tracker.firebaseio.com/trips/.json?auth=${idToken}`,
+                        data: {
+                            "country": trip.country,
+                            "departureDate": trip.departureDate,
+                            "returnDate": trip.returnDate,
+                            "uid": null 
+                            // reference to the cloud storage here
+                        }
+                    })
+                })
+                .catch(function(error) {
+                    alert("sorry, unsuccessful")
                 })
             }
         }
+        // photo uploaded to google cloud storage
+        // "upload": {
+        //     value: function () {
+        //         return $http({
+        //             method: "PUT"
+        //         })
+        //     }
+        // }
     })
 })
