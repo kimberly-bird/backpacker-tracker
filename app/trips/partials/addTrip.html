@@ -16,8 +16,9 @@
         <br>
         <!-- will need to find way to add photo to large file storage in firebase -->
         <div>
-            Photo will be uploaded here
-            <button>Upload</button>
+            <p>Choose your photo</p>
+            <progress value="0" max="100" id="uploader">0%</progress>
+            <input type="file" value="upload" id="fileButton"></input>
         </div>
         <br>
         <button ng-click="addTrip()">Add</button>

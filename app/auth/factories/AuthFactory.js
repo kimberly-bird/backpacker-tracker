@@ -51,12 +51,6 @@ angular.module("backpackerApp")
                             user.email,
                             user.password
                         )
-                        // .then((theUser) => {
-                        //     const registeredUser = {
-                        //         "uid": `${theUser.uid}`,
-                        //         "email": `${theUser.email}`
-                        //     }
-                        // })
         }
     })
 })

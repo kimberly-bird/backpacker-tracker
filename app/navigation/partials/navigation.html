@@ -1,8 +1,8 @@
-<ul ng-controller="NavCtrl">
-    <li>Backpacker Tracker</li>
-    <li><a href="#!/trips/list">View Trips</a></li>
-    <li><a href="#!/trips/new">Add Trip</a></li>
-    <li>
+<ul ng-controller="NavCtrl" class="nav">
+    <li class="nav">Backpacker Tracker</li>
+    <li class="nav"><a href="#!/trips/list">View Trips</a></li>
+    <li class="nav"><a href="#!/trips/new">Add Trip</a></li>
+    <li class="nav">
         <span ng-if="isAuthenticated()">
             <a href="#" ng-click="logout()">Logout</a>
         </span>
