@@ -41,7 +41,6 @@ angular
                         method: "POST",
                         url: `https://backpacker-tracker.firebaseio.com/trips/.json?auth=${idToken}`,
                         data: trip
-                            // reference to the cloud storage here
                     })
                 })
                 .catch(function(error) {
@@ -49,13 +48,5 @@ angular
                 })
             }
         }
-        // photo uploaded to google cloud storage
-        // "upload": {
-        //     value: function () {
-        //         return $http({
-        //             method: "PUT"
-        //         })
-        //     }
-        // }
     })
 })

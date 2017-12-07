@@ -14,11 +14,11 @@
             Return Date: <input type="date" ng-model="newTrip.returnDate" />
         </div>
         <br>
-        <!-- will need to find way to add photo to large file storage in firebase -->
+        <!-- upload not working -->
         <div>
-            <p>Choose your photo</p>
+            <p>Choose your favorite trip photo</p>
             <progress value="0" max="100" id="uploader">0%</progress>
-            <input type="file" value="upload" id="fileButton"></input>
+            <input type="file" value="upload" id="fileButton" ng-model"newUpload.photo" ng-change="uploadFile()"></input>
         </div>
         <br>
         <button ng-click="addTrip()">Add</button>

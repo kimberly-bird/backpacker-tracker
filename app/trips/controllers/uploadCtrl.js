@@ -1,11 +1,14 @@
-// get photo elements
-let uploader = document.getElementById("uploader")
-let fileButton = document.getElementById("fileButton")
+angular
+.module("backpackerApp")
+.controller("uploadCtrl", function ($scope) {
+    // const currentUID = firebase.auth().currentUser.uid
+    $scope.newUpload = {}
 
-// listen to change event
-fileButton.addEventListener("change", function (e) {
+    $scope.uploadFile = function () {
     // get file
-    let file = e.target.files[0]
+    let file = {
+        "photo": $scope.newUpload.photo
+    }
     // get storage reference
     let storageRef = firebase.storage().ref("trip_photos", + file.name)
     // upload file
@@ -16,14 +19,12 @@ fileButton.addEventListener("change", function (e) {
             let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             uploader.value = percentage
         },
-
         function error(err) {
             alert("Oops! Your image didn't upload. Please try again.")
         },
-
         function complete () {
             alert("Great! Your photo has been uploaded.")
-
         }
-)
+    )
+    }
 })
