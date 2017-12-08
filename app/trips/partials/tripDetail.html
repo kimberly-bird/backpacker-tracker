@@ -1,13 +1,17 @@
+<section>
 
+    <h1 class="editable" contenteditable="true">{{ trip.country }}</h1>
+    
+    <h3 class="editable" contenteditable="true">Departed on: {{ trip.departureDate | date:"fullDate" }}</h3>
+    <h3 class="editable" contenteditable="true">Returned on: {{ trip.returnDate | date:"fullDate" }}</h3>
+    <img class="tripPhoto" ng-src="{{ trip.photo }}">
+    <br>
 
-<div>
-    <h1>{{ trip.country }}</h1>
+    <!-- edit not working -->
+    <button ng-click="editTrip()">Edit Trip</button>
+    <button ng-click="deleteTrip()">Delete Trip</button>
     
-    <h3>Departed on: {{ trip.departureDate | date:"fullDate" }}</h3>
-    <h3>Returned on: {{ trip.returnDate | date:"fullDate" }}</h3>
-    
-    <h4>Photo eventually!</h4>
-</div>
+</section>
 
 
 

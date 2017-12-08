@@ -1,5 +1,3 @@
-// creating an object with an interface - these are global objects that can be injected anywhere else when injected as a parameter in a controller (so $scope.list, etc.)
-
 angular
 .module("backpackerApp")
 .factory("TripFactory", function ($http, AuthFactory) {
@@ -45,6 +43,23 @@ angular
                 })
                 .catch(function(error) {
                     console.log("Error getting token")
+                })
+            }
+        },
+        "delete": {
+            value: function (key) {
+                return $http({
+                    method: "DELETE",
+                    url: `https://backpacker-tracker.firebaseio.com/trips/${key}/.json`
+                })
+            }
+        },
+        "edit": {
+            value: function (trip, key) {
+                return $http({
+                    method: "PUT",
+                    url: `https://backpacker-tracker.firebaseio.com/trips/${key}/.json`,
+                    data: trip
                 })
             }
         }

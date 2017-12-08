@@ -5,22 +5,24 @@ angular
     $scope.trips = []
     const currentUID = firebase.auth().currentUser.uid
 
-    // creates trip object to be added to Firebase
+    // create trip object to be added to Firebase
     $scope.addTrip = function () {
         const trip = {
             "country": $scope.newTrip.country,
             "departureDate": $scope.newTrip.departureDate,
             "returnDate": $scope.newTrip.returnDate,
-            "uid": currentUID
+            "uid": currentUID,
+            "photo": $scope.newTrip.photo
         }
-        
-        // clears field and pushes trip object to tripFactory
+
+        // clear fields and push trip object to tripFactory
         TripFactory.add(trip).then(() => {
             $scope.trips.push(trip)
             $scope.newTrip.country = ""
             $scope.newTrip.departureDate = ""
             $scope.newTrip.returnDate = ""
             
+            // redirect to list after submitting form
             $timeout(() => {
                 $location.url("/trips/list")
             }, 100)
@@ -28,6 +30,47 @@ angular
     }
     TripFactory.list().then(data => {
         $scope.trips = data
+    })
+
+    // get photo elements
+    let uploader = document.getElementById("uploader")
+    let fileButton = document.getElementById("fileButton")
+    let fileList
+    
+    // listen to change event
+    fileButton.addEventListener("change", function (e) {
+
+        // get file
+        fileList = this.files[0]
+
+        // get firebase storage reference
+        let storageRef = firebase.storage().ref("uploads/" + fileList.name)
+        
+        // upload file
+        let task = storageRef.put(fileList)
+
+        // update progress bar
+        task.on("state_changed", 
+        function progress(snapshot) {
+            let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            uploader.value = percentage
+        },
+        function error(err) {
+            alert("Oops! Your image didn't upload. Please try again.")
+        },
+        function complete () {
+            alert("Great! Your photo has been uploaded.")
+        })
+
+        // upload photo to firebase
+        task.then(function (snapshot) {
+
+            storageRef.getDownloadURL()
+
+            .then(function(url) {
+                $scope.newTrip.photo = url
+            })
+        })
     })
 })
 

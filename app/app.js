@@ -17,7 +17,7 @@ let isAuth = AuthFactory => new Promise ((resolve, reject) => {
 
 angular.module("backpackerApp").config(function ($routeProvider) {
     /**
-     * Configure all Angular application routes here -- needs updating to align with my trips controllers
+     * Configure all Angular application routes 
      */
     $routeProvider
         .when("/", {

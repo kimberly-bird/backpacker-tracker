@@ -1,8 +1,10 @@
-<h2>My Trips</h2>
-<div ng-repeat="currentTrip in trips">
-    <a href="#!/trips/detail/{{ currentTrip.id }}">{{ currentTrip.country }}</a>
-</div>
+<section>
 
-<!-- ng-if="currentTrip.uid === trip.currentUID" -->
-<!-- | filter: {currentUser}:true -->
+    <h2>My Trips</h2>
+    <div ng-repeat="currentTrip in trips">
+        <a href="#!/trips/detail/{{ currentTrip.id }}">{{ currentTrip.country }}</a>
+    </div>
+
+</section>
+
 
