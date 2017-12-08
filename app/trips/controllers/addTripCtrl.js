@@ -12,7 +12,8 @@ angular
             "departureDate": $scope.newTrip.departureDate,
             "returnDate": $scope.newTrip.returnDate,
             "uid": currentUID,
-            "photo": $scope.newTrip.photo
+            "photo": $scope.newTrip.photo,
+            "rating": $scope.newTrip.rating
         }
 
         // clear fields and push trip object to tripFactory
@@ -31,7 +32,26 @@ angular
     TripFactory.list().then(data => {
         $scope.trips = data
     })
+ 
+    // change class on click of a star rating to update color of star rating
+    $scope.isActive = false
+    $scope.starClicked = function(e) {
+        // target clicked star and split on _ to get index
+        let targetedStar = e.target.id.split("_")[1]
+        // console.log(targetedStar)
+        let starCollection = document.getElementsByClassName("fa-star")
 
+
+        for (let i = targetedStar; i > 0; i--) {
+            starCollection[targetedStar].classList.add("active")
+
+
+            
+            // $scope.isActive = !$scope.isActive
+        }
+
+    }  
+    
     // get photo elements
     let uploader = document.getElementById("uploader")
     let fileButton = document.getElementById("fileButton")

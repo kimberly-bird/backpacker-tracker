@@ -11,22 +11,7 @@ angular
             $scope.trip = trip
         })        
 
-        // contenteditable to edit text and send to Firebase
-        $scope.editmode = false
-        $scope.toggleEditMode = function() {
-            $scope.editmode = $scope.editmode === false ? true: false
-        }
-        
-        app.directive("contenteditable", function() {
-            return {
-                require: "ngModel",
-                link: function(scope, element, attrs, ngModel) {
-                    
-                    function read() {
-                        ngModel.$setViewValue(element.html())
-                    }
-                    
-        // bound to ng-click on trip detail
+        // bound to ng-click on trip detail - not working
         $scope.editTrip = () => 
         TripFactory.edit($scope.trip, $routeParams.tripId).then(() =>
         $location.url("/trips/list"))

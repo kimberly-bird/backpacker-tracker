@@ -6,3 +6,12 @@
 .tripPhoto {
     max-width: 300px;
 }
+
+.checked {
+    color:orange;
+  }
+
+.active {
+    color:orange;
+  }
+
