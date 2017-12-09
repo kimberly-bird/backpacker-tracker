@@ -14,7 +14,8 @@ angular
             "returnDate": $scope.newTrip.returnDate,
             "uid": currentUID,
             "photo": $scope.newTrip.photo,
-            "rating": targetedStar
+            "rating": targetedStar,
+            "listOfMemories": $scope.newTrip.listOfMemories
         }
 
         // clear fields and push trip object to tripFactory
@@ -23,6 +24,7 @@ angular
             $scope.newTrip.country = ""
             $scope.newTrip.departureDate = ""
             $scope.newTrip.returnDate = ""
+            $scope.newTrip.listOfMemories = ""
             
             // redirect to list after submitting form
             $timeout(() => {

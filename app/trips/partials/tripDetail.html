@@ -1,9 +1,9 @@
 <section>
 
-    <h1 class="editable" contenteditable="true">{{ trip.country }}</h1>
+    <h1>{{ trip.country }}</h1>
     
-    <h3 class="editable" contenteditable="true">Departed on: {{ trip.departureDate | date:"fullDate" }}</h3>
-    <h3 class="editable" contenteditable="true">Returned on: {{ trip.returnDate | date:"fullDate" }}</h3>
+    <h3>Departed on {{ trip.departureDate | date:"fullDate" }}</h3>
+    <h3>Returned on {{ trip.returnDate | date:"fullDate" }}</h3>
     <div class="starRating">
         <h3>Trip Rating</h3>
         <span id="star_1" ng-class="trip.rating >= 1 ? 'fa fa-star checked' : 'fa fa-star'"></span>
@@ -15,6 +15,11 @@
     <br>
     <img class="tripPhoto" ng-src="{{ trip.photo }}">
     <br>
+    <!-- this is not displaying on multiple li lines -->
+    <h3>Your favorite memories </h3>
+    <ul ng-repeat="memory in trip.listOfMemories">
+        <li >{{ memory }}</li>
+    </ul>
 
     <!-- edit not working -->
     <!-- <button ng-click="editTrip()">Edit Trip</button> -->
