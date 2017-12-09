@@ -4,6 +4,7 @@ angular
     $scope.newTrip = {}
     $scope.trips = []
     const currentUID = firebase.auth().currentUser.uid
+    let targetedStar
 
     // create trip object to be added to Firebase
     $scope.addTrip = function () {
@@ -13,7 +14,7 @@ angular
             "returnDate": $scope.newTrip.returnDate,
             "uid": currentUID,
             "photo": $scope.newTrip.photo,
-            "rating": $scope.newTrip.rating
+            "rating": targetedStar
         }
 
         // clear fields and push trip object to tripFactory
@@ -34,22 +35,24 @@ angular
     })
  
     // change class on click of a star rating to update color of star rating
-    $scope.isActive = false
     $scope.starClicked = function(e) {
         // target clicked star and split on _ to get index
-        let targetedStar = e.target.id.split("_")[1]
-        // console.log(targetedStar)
-        let starCollection = document.getElementsByClassName("fa-star")
+        targetedStar = e.target.id.split("_")[1]
 
+        let starCollection = document.getElementsByClassName("fa-star-o")
+        let starArray = targetedStar - 1
 
-        for (let i = targetedStar; i > 0; i--) {
-            starCollection[targetedStar].classList.add("active")
+        // make an array of the stars that need to be filled in
+        let numStarsToChange = []
+            for (let i = 0; i <= starArray; i++) {
+                const element = starArray[i]
+                numStarsToChange.push(i)
+            }
 
-
-            
-            // $scope.isActive = !$scope.isActive
+        // change class for each of the stars that need to be filled in
+        for (let i = 0; i < numStarsToChange.length; i++) {
+            let clickedStar = starCollection[i].classList.add("active")   
         }
-
     }  
     
     // get photo elements
