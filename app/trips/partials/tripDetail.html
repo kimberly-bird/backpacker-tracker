@@ -5,13 +5,14 @@
     <h3 class="editable" contenteditable="true">Departed on: {{ trip.departureDate | date:"fullDate" }}</h3>
     <h3 class="editable" contenteditable="true">Returned on: {{ trip.returnDate | date:"fullDate" }}</h3>
     <div class="starRating">
-        <span class="fa fa-star-o " id="star_1" ng-click="starClicked($event)"></span>
-        <span class="fa fa-star-o " id="star_2" ng-click="starClicked($event)"></span>
-        <span class="fa fa-star-o " id="star_3" ng-click="starClicked($event)"></span>
-        <span class="fa fa-star-o " id="star_4" ng-click="starClicked($event)"></span>
-        <span class="fa fa-star-o " id="star_5" ng-click="starClicked($event)"></span>
+        <h3>Trip Rating</h3>
+        <span id="star_1" ng-class="trip.rating >= 1 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+        <span id="star_2" ng-class="trip.rating >= 2 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+        <span id="star_3" ng-class="trip.rating >= 3 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+        <span id="star_4" ng-class="trip.rating >= 4 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+        <span id="star_5" ng-class="trip.rating >= 5 ? 'fa fa-star checked' : 'fa fa-star'"></span>
     </div>
-    <h3 class="editable" contenteditable="true">Rating: {{ trip.rating }}</h3>
+    <br>
     <img class="tripPhoto" ng-src="{{ trip.photo }}">
     <br>
 

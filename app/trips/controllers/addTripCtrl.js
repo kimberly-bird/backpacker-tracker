@@ -39,7 +39,7 @@ angular
         // target clicked star and split on _ to get index
         targetedStar = e.target.id.split("_")[1]
 
-        let starCollection = document.getElementsByClassName("fa-star-o")
+        let starCollection = document.getElementsByClassName("fa-star")
         let starArray = targetedStar - 1
 
         // make an array of the stars that need to be filled in
@@ -51,7 +51,7 @@ angular
 
         // change class for each of the stars that need to be filled in
         for (let i = 0; i < numStarsToChange.length; i++) {
-            let clickedStar = starCollection[i].classList.add("active")   
+            starCollection[i].classList.add("active")   
         }
     }  
     
