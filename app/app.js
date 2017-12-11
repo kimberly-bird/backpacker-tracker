@@ -44,5 +44,10 @@ angular.module("backpackerApp").config(function ($routeProvider) {
             templateUrl: 'app/auth/partials/auth.html',
             controller: 'AuthCtrl'
         })
+        .when("/trips/map", {
+            templateUrl: "app/trips/partials/map.html",
+            controller: "mapCtrl",
+            resolve: { isAuth }
+        })
         .otherwise('/auth')
 })
