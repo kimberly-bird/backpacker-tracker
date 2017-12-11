@@ -1,9 +1,21 @@
 <section>
     
     <h2>Add a Trip!</h2>
+    <div ng-controller="addTripCtrl">
+        <h3>Click on the map or search for a location to add the location of your trip.</h3>
+    
+        <div id="floating-panel">
+            <input id="address" type="textbox" value="">
+            <input id="submit" type="button" value="Geocode">
+        </div>
+        
+        <div id="map"></div>
+    </div>
+
     <form>
+        <br>
         <div>
-            Country: <input type="text" ng-model="newTrip.country" />
+            Country: <input type="text" ng-model="newTrip.country">
         </div>
         <br>
         <div>

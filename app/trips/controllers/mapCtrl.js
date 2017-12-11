@@ -9,12 +9,12 @@ angular
                 center: {lat:47.1625,lng:19.5033}
             }
             let map = new google.maps.Map(document.getElementById("map"), options)
-        
-            // listen for click on map
-            google.maps.event.addListener(map, "click", function (event) {
-                // add marker to map
-                addMarker({coordinates:event.latLng, content:"<h4>View Trip</h4>"})
-            })
+
+            // listen for click on map - change to connect to a trip detail
+            // google.maps.event.addListener(map, "click", function (event) {
+            //     // add marker to map
+            //     addMarker({coordinates:event.latLng, content:"<h4>View Trip</h4>"})
+            // })
         
             // array of marker properties
             let markerCollection = [

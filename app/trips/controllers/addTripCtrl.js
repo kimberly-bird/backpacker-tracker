@@ -10,6 +10,7 @@ angular
     $scope.addTrip = function () {
         const trip = {
             "country": $scope.newTrip.country,
+            "position": $scope.newTrip.marker,
             "departureDate": $scope.newTrip.departureDate,
             "returnDate": $scope.newTrip.returnDate,
             "uid": currentUID,
@@ -17,6 +18,14 @@ angular
             "rating": targetedStar,
             "listOfMemories": $scope.newTrip.listOfMemories
         }
+
+        // get country and city values from Firebase - where do I insert these into the partial?
+        TripFactory.getCountry().then(country => {
+            $scope.countries[0] = country
+        })
+        TripFactory.getCountry().then(city => {
+            $scope.cities[0] = city
+        })
 
         // clear fields and push trip object to tripFactory
         TripFactory.add(trip).then(() => {
@@ -35,6 +44,7 @@ angular
     TripFactory.list().then(data => {
         $scope.trips = data
     })
+
 
     // change class on click of a star rating to update color of star rating
     $scope.starClicked = function(e) {
@@ -97,6 +107,72 @@ angular
             })
         })
     })
-})
+
+    // array of marker properties
+    // let markerCollection = [
+    //     { 
+    //         coordinates: {lat:47.4979,lng:19.0402}, 
+    //         content: "<h4>View Trip</h4>"
+    //     },
+    //     // { 
+    //     //     coordinates: {lat:21.5218,lng:-77.7812}, 
+    //     //     content: "<h4>View Trip</h4>"
+    //     // }
+    // ]
+    // map function
+    function initMap() {
+        let options = {
+            zoom: 2,
+            center: {lat:47.1625,lng:19.5033}
+        }
+        let map = new google.maps.Map(document.getElementById("map"), options)
+
+        let geocoder = new google.maps.Geocoder()
+        
+        // listen for click on map - stretch
+        // google.maps.event.addListener(map, "click", function (event) {
+        //     // add marker to map
+        //     addMarker({coordinates:event.latLng, content:"<h4>View Trip</h4>"})
+        // })
+
+        // listen to geocoding input on submit
+        document.getElementById('submit').addEventListener('click', function() {
+            geocodeAddress(geocoder, map)
+        })
+            
+        }
+    initMap()
+
+    // geocoding function 
+        function geocodeAddress(geocoder, resultsMap) {
+        let address = document.getElementById('address').value
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location)
+            // geocoding results to add Marker to map
+            let marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location, 
+                content: "<h4>View Trip</h4>"
+            })
+            $scope.newTrip.marker = marker.position
+
+            let infoWindow = new google.maps.InfoWindow({
+                content: marker.content
+            })
+    
+            marker.addListener("click", function(){
+                infoWindow.open(map, marker)
+            })
+            //push geocoded results to markerCollection array
+            // addMarker()
+            } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+            }
+        })
+        }
+    }
+    )
+    
 
 
