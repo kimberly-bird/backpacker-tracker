@@ -15,3 +15,7 @@
     color:orange;
   }
 
+.memoryList {
+    display: list-item;
+}
+

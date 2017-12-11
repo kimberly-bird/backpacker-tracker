@@ -35,7 +35,7 @@ angular
     TripFactory.list().then(data => {
         $scope.trips = data
     })
- 
+
     // change class on click of a star rating to update color of star rating
     $scope.starClicked = function(e) {
         // target clicked star and split on _ to get index
