@@ -21,8 +21,8 @@ angular.module("backpackerApp").config(function ($routeProvider) {
      */
     $routeProvider
         .when("/", {
-            templateUrl: "app/trips/partials/listAllTrips.html",
-            controller: "listAllTripsCtrl",
+            templateUrl: "app/trips/partials/map.html",
+            controller: "mapCtrl",
             resolve: { isAuth }
         })
         .when("/trips/list", {

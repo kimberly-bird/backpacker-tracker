@@ -17,7 +17,7 @@
     <br>
     <!-- this is not displaying on multiple li lines -->
     <h3>Your favorite memories </h3>
-    <ul ng-repeat="memory in trip.listOfMemories">
+    <ul ng-repeat="memory in trip.listOfMemories track by $index">
         <li class="memoryList">{{ memory }}</li>
     </ul>
 

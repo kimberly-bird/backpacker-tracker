@@ -6,7 +6,7 @@ angular.module("backpackerApp")
         AuthFactory.authenticate(credentials).then(function (didLogin) {
             $scope.login = {}
             $scope.register = {}
-            $location.url("/trips/list")
+            $location.url("/trips/map")
         })
     }
 

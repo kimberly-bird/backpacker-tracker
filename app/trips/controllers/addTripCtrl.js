@@ -27,9 +27,9 @@ angular
             $scope.newTrip.returnDate = ""
             $scope.newTrip.listOfMemories = ""
             
-            // redirect to list after submitting form
+            // redirect to map view after submitting form
             $timeout(() => {
-                $location.url("/trips/list")
+                $location.url("/trips/map")
             }, 100)
         })
     }
@@ -100,22 +100,118 @@ angular
         })
     })
 
-    // array of marker properties
-    // let markerCollection = [
-    //     { 
-    //         coordinates: {lat:47.4979,lng:19.0402}, 
-    //         content: "<h4>View Trip</h4>"
-    //     },
-    //     // { 
-    //     //     coordinates: {lat:21.5218,lng:-77.7812}, 
-    //     //     content: "<h4>View Trip</h4>"
-    //     // }
-    // ]
     // map function
     function initMap() {
         let options = {
-            zoom: 2,
-            center: {lat:47.1625,lng:19.5033}
+            center: {lat:47.1625,lng:19.5033},
+            zoom: 1,
+            styles: [
+                {
+                    "featureType": "all",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "lightness": "42"
+                        },
+                        {
+                            "visibility": "on"
+                        },
+                        {
+                            "hue": "#ff0000"
+                        },
+                        {
+                            "saturation": "-100"
+                        },
+                        {
+                            "gamma": "0.78"
+                        },
+                        {
+                            "weight": "0.37"
+                        },
+                        {
+                            "invert_lightness": true
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#444444"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "color": "#f2f2f2"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 45
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "color": "#3ec7c9"
+                        },
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                }
+            ]
         }
         let map = new google.maps.Map(document.getElementById("map"), options)
 
@@ -145,7 +241,7 @@ angular
             let marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location, 
-                content: "<h4>View Trip</h4>"
+                content: `<div ng-repeat="currentTrip in trips"><a href="#!/trips/detail/{{ currentTrip.id }}">View Trip</a></div>`
             })
             $scope.newTrip.marker = marker.position
 

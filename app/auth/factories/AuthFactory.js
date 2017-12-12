@@ -6,9 +6,9 @@ angular.module("backpackerApp")
         if (user) {
             currentUserData = user
 
-            if ($location.url() !== "/trips/list") {
+            if ($location.url() !== "/trips/map") {
                 $timeout(function () {
-                    $location.url("/trips/list")
+                    $location.url("/trips/map")
                 }, 100)
             } else {
                 $route.reload()
