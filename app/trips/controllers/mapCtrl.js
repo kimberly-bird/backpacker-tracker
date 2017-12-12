@@ -142,11 +142,13 @@ angular
                 let marker = new google.maps.Marker({
                     position: properties.position,
                     map:map,
-                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`
+                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
+                    icon: './app/trips/img/rsz_1small_pin.png'
                 })
         
                 let infoWindow = new google.maps.InfoWindow({
-                    content: `<div ><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`
+                    content: `<div ><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
+                    icon: './app/trips/img/rsz_1small_pin.png'
                 })
         
                 marker.addListener("click", function(){

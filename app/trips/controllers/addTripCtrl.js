@@ -241,7 +241,8 @@ angular
             let marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location, 
-                content: `<div ng-repeat="currentTrip in trips"><a href="#!/trips/detail/{{ currentTrip.id }}">View Trip</a></div>`
+                content: `<div ng-repeat="currentTrip in trips"><a href="#!/trips/detail/{{ currentTrip.id }}">View Trip</a></div>`,
+                icon: './app/trips/img/rsz_1small_pin.png'
             })
             $scope.newTrip.marker = marker.position
 
