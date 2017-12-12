@@ -55,7 +55,7 @@ angular
 
         // change class for each of the stars that need to be filled in
         for (let i = 0; i < numStarsToChange.length; i++) {
-            starCollection[i].classList.add("active")   
+            starCollection[i].classList.add("checked")   
         }
     }  
     

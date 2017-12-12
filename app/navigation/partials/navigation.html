@@ -1,11 +1,11 @@
-<ul ng-controller="NavCtrl" class="nav">
+<ul ng-controller="NavCtrl" class="nav" id="colorNav">
     <li class="nav">Backpacker Tracker</li>
-    <li class="nav"><a href="#!/trips/new">Add Trip</a></li>
-    <li class="nav"><a href="#!/trips/list">List View</a></li>
-    <li class="nav"><a href="#!/trips/map">Map View</a></li>
-    <li class="nav">
+    <li class="nav green"><a class="fa fa-plus" href="#!/trips/new"> Add Trip</a></li>
+    <li class="nav red"><a class="fa fa-bars" href="#!/trips/list"> List View</a></li>
+    <li class="nav yellow"><a class="fa fa-map-o" href="#!/trips/map"> Map View</a></li>
+    <li class="nav purple">
         <span ng-if="isAuthenticated()">
-            <a href="#" ng-click="logout()">Logout</a>
+            <a class="fa fa-sign-out" href="#" ng-click="logout()"> Logout</a>
         </span>
         <span ng-if="!isAuthenticated()"></span>
     </li>
