@@ -31,16 +31,6 @@ angular
                 })
             }
         },
-        "getCountry": {
-            value: function () {
-                return $http({
-                    method: "GET",
-                    url: "https://backpacker-tracker.firebaseio.com/Countries"
-                }).then(response => {
-                    return response.data
-                })
-            }
-        },
         "add": {
             value: function (trip) {
                 return firebase.auth().currentUser.getIdToken(true)

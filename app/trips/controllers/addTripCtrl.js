@@ -19,14 +19,6 @@ angular
             "listOfMemories": $scope.newTrip.listOfMemories
         }
 
-        // get country and city values from Firebase - where do I insert these into the partial?
-        TripFactory.getCountry().then(country => {
-            $scope.countries[0] = country
-        })
-        TripFactory.getCountry().then(city => {
-            $scope.cities[0] = city
-        })
-
         // clear fields and push trip object to tripFactory
         TripFactory.add(trip).then(() => {
             $scope.trips.push(trip)
