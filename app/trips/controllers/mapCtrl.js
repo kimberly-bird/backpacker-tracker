@@ -5,6 +5,7 @@ angular
 
         // empty array to hold coordinates of user's saved trips
         $scope.marker = []
+        let country = $scope.country
 
         function initMap() {
             let options = {
@@ -142,7 +143,7 @@ angular
                 let marker = new google.maps.Marker({
                     position: properties.position,
                     map:map,
-                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
+                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip ${ country }</a></div>`,
                     icon: './app/trips/img/rsz_1small_pin.png'
                 })
         

@@ -216,12 +216,6 @@ angular
         let map = new google.maps.Map(document.getElementById("map"), options)
 
         let geocoder = new google.maps.Geocoder()
-        
-        // listen for click on map - stretch
-        // google.maps.event.addListener(map, "click", function (event) {
-        //     // add marker to map
-        //     addMarker({coordinates:event.latLng, content:"<h4>View Trip</h4>"})
-        // })
 
         // listen to geocoding input on submit
         document.getElementById('submit').addEventListener('click', function() {
@@ -241,7 +235,7 @@ angular
             let marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location, 
-                content: `<div ng-repeat="currentTrip in trips"><a href="#!/trips/detail/{{ currentTrip.id }}">View Trip</a></div>`,
+                content: `<div ><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
                 icon: './app/trips/img/rsz_1small_pin.png'
             })
             $scope.newTrip.marker = marker.position
@@ -249,12 +243,11 @@ angular
             let infoWindow = new google.maps.InfoWindow({
                 content: marker.content
             })
-    
+            // listens to marker click and displays info window
             marker.addListener("click", function(){
                 infoWindow.open(map, marker)
             })
-            //push geocoded results to markerCollection array
-            // addMarker()
+      
             } else {
             alert('Geocode was not successful for the following reason: ' + status);
             }
