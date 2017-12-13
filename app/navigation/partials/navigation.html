@@ -1,14 +1,14 @@
 <div>
     <ul ng-controller="NavCtrl" class="navContainer" id="colorNav">
-        <li class="navItem"> Backpacker Tracker</li>
+        <li class="navItem"><img src="./app/auth/img/logo.png" class="logo"></li>
         <li class="navItem purple">
             <span ng-iItemf="isAuthenticated()">
-                <a class="fa fa-sign-out" href="#" ng-click="logout()"> Logout</a>
+                <i class="fa fa-sign-out"></i><a href="#" ng-click="logout()"> Logout</a>
             </span>
             <span ng-if="!isAuthenticated()"></span>
         </li>
-        <li class="navItem yellow"><a class="fa fa-map-o" href="#!/trips/map"> Map View</a></li>
-        <li class="navItem red"><a class="fa fa-bars" href="#!/trips/list"> List View</a></li>
-        <li class="navItem green"><a class="fa fa-plus" href="#!/trips/new"> Add Trip</a></li>
+        <li class="navItem yellow"><i class="fa fa-map-o"></i><a href="#!/trips/map"> Map View</a></li>
+        <li class="navItem red"><i class="fa fa-bars"></i><a href="#!/trips/list"> List View</a></li>
+        <li class="navItem green"><i class="fa fa-plus"></i><a href="#!/trips/new"> Add Trip</a></li>
     </ul>
 </div>

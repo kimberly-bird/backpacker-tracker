@@ -1,5 +1,6 @@
-body, a, ul, li, .nav {
-    font-family: 'Rubik', sans-serif;
+body, a, ul, li, .navItem {
+    font-family: 'Spinnaker', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
     /* font-family: 'Slabo 27px', serif; */
 }
 
@@ -32,21 +33,15 @@ h1, h2, h3, p {
     text-align: center;
 }
 
-
-
 /* changes color of star based on # stars clicked - trip detail */
 .checked {
     color:orange;
 }
 
-.memoryList {
-    display: list-item;
-}
-
 /*  map styling  */
 #map {
     width: 85%;
-    height: 450px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -61,7 +56,7 @@ h1, h2, h3, p {
 /* Geocode styling */
 #floating-panel {
     position: absolute;
-    top: 215px;
+    top: 225px;
     left: 45%;
     z-index: 5;
     background-color: #fff;
@@ -98,13 +93,14 @@ h1, h2, h3, p {
 
 #colorNav > ul{
     width: 450px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 #colorNav li.green{
     /* This is the color of the menu item */
     background-color:#00c08b;
-
+    margin-bottom: 60px;
+    
     /* This is the color of the icon */
     color:#127a5d;
 }
@@ -112,7 +108,8 @@ h1, h2, h3, p {
 #colorNav li.red{
     /* This is the color of the menu item */
     background-color:#ea5080;
-
+    margin-bottom: 60px;
+    
     /* This is the color of the icon */
     color:#aa2a52;
 }
@@ -120,7 +117,8 @@ h1, h2, h3, p {
 #colorNav li.yellow{
     /* This is the color of the menu item */
     background-color:#f8c54d;
-
+    margin-bottom: 60px;
+    
     /* This is the color of the icon */
     color:#ab8426;
 }
@@ -128,16 +126,19 @@ h1, h2, h3, p {
 #colorNav li.purple{
     /* This is the color of the menu item */
     background-color:#df6dc2;
+    margin-bottom: 60px;
 
     /* This is the color of the icon */
     color:#9f3c85;
 }
 
-
+.logo {
+    max-height: 65px;
+}
 
 /* button styling */
 button {
-    background-color: #00c08b; /* Green */
+    background-color: #00c08b; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -145,17 +146,6 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
-
-#submitGeo {
-    background-color: #00c08b; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
 }
 
 /* form styling */
@@ -167,7 +157,6 @@ button {
     padding: 20px;
     background: #f4f7f8;
     border-radius: 8px;
-    font-family: Georgia, "Times New Roman", Times, serif;
 }
 .form-style-5 fieldset{
     border: none;
@@ -191,7 +180,6 @@ button {
 .form-style-5 input[type="password"],
 .form-style-5 textarea,
 .form-style-5 select {
-    font-family: Georgia, "Times New Roman", Times, serif;
     background: rgba(255,255,255,.1);
     border: none;
     border-radius: 4px;
@@ -262,7 +250,8 @@ button {
 
 /* card styling on list page */
 .tripPhoto {
-    max-width: 300px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 
 .cardPhoto {
@@ -276,8 +265,22 @@ button {
     transition: 0.3s;
     padding-bottom: 15px;
     margin-bottom: 25px;
+    margin-right: auto;
+    margin-left: auto;
     width: 90%;
     break-inside: avoid-column;
+}
+
+.tripCard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    width: 40%;
+    break-inside: avoid-column;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .columns {
@@ -294,6 +297,17 @@ button {
     padding: 2px 16px;
     position: relative;
     bottom: 60px;
+    background-color: #aa2a55d0;
+    margin-bottom: -45px;
+    text-align: center;
+    text-decoration: none;  
+    font-size: 2em;
+}
+
+.tripContainer {
+    padding: 2px 16px;
+    position: relative;
+    bottom: 60px;
     background-color: rgba(146, 146, 146, 0.6);
     margin-bottom: -45px;
     text-align: center;
@@ -301,23 +315,25 @@ button {
 }
 
 /*  link styling  */
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:active {
-    text-decoration: underline;
-}
-
 a {
-    color: white;
+    text-decoration: none;
+    color: rgb(66, 66, 66);
 }
+
+.memoryList li {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.header {
+    background-color: #f8c54d;
+    padding: 5px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.35em;
+    margin-top: -35px;
+}
+
 
