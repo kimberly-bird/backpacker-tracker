@@ -1,51 +1,15 @@
-<!-- <button ng-click="logMeIn(auth)">Login</button> -->
+<!-- <nav ng-include="'app/navigation/partials/navigation.html'"></nav> -->
 
-<!-- <div> -->
-    <!-- <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus> -->
-    <!-- <input type="password" placeholder="Password" ng-model="auth.password"> -->
-    <!-- <button ng-click="registerUser(auth)">Register</button> -->
-<!-- </div> -->
-
-
-<div class="container"></div>
-<div class="row">
-        <img src="./app/auth/img/brasov.jpg" id="welcome_image">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
-            <div>
-                <h1>Welcome to Backpacker Tracker!</h1>
-                <p>Join to easily record your favorite trip memories.</p>
-            </div>
-            <div class="panel-heading">
-              <strong>Login</strong>
-            </div>
-            <div class="panel-body">
-                <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">
-                        Email</label>
-                    <div class="col-sm-9">
-                        <input ng-model="auth.email"  autofocus type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-3 control-label">
-                        Password</label>
-                    <div class="col-sm-9">
-                        <input ng-model="auth.password" type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
-                    </div>
-                </div>
-                <div class="form-group last">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <button ng-click="logMeIn(auth)" type="submit" class="btn btn-success btn-sm">
-                            Sign in</button>
-                             <button ng-click="registerUser(auth)" class="btn btn-default btn-sm">
-                            Register</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="form-style-5">
+    <form>
+        <fieldset>
+            <input type="email" placeholder="Email address" ng-model="auth.email">
+            <input type="password" placeholder="Password" ng-model="auth.password">
+        </fieldset>
+        <button ng-click="logMeIn(auth)">Login</button> 
+        <button ng-click="registerUser(auth)">Register</button>
+    </form>
 </div>
-</div>
+
+
+  

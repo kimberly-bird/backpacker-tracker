@@ -7,20 +7,32 @@ body {
     background-color: #e8eeef;
 }
 
+html { 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html, body {
+    margin: -10px 10px 0px 0px;
+    padding: 0px;
+}
+
 h1, h2, h3, p {
     text-align: center;
 }
 
-.nav {
+.footer {
     display: block;
-    padding: 10px;
-    float: right;
-    margin-top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
 }
 
-.tripPhoto {
-    max-width: 300px;
-}
+
 
 /* changes color of star based on # stars clicked - trip detail */
 .checked {
@@ -31,6 +43,7 @@ h1, h2, h3, p {
     display: list-item;
 }
 
+/*  map styling  */
 #map {
     width: 85%;
     height: 450px;
@@ -38,10 +51,18 @@ h1, h2, h3, p {
     margin-right: auto;
 }
 
+#addTripMap {
+    width: 85%;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Geocode styling */
 #floating-panel {
     position: absolute;
-    top: 150px;
-    left: 25%;
+    top: 215px;
+    left: 45%;
     z-index: 5;
     background-color: #fff;
     padding: 5px;
@@ -50,12 +71,6 @@ h1, h2, h3, p {
     line-height: 30px;
     padding-left: 10px;
 }
-
-/* #welcome_image {
-    position: absolute;
-    width: 100%;
-    height: 350px;
-} */
    
 .panel-default {
     opacity: 0.9;
@@ -67,6 +82,20 @@ h1, h2, h3, p {
 }
 
 /* nav styles */
+.navContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style: none;
+}
+
+.navItem {
+    padding: 10px;
+}
+
+.navContainer li:first-child {
+    margin-left: auto;
+}
+
 #colorNav > ul{
     width: 450px;
     margin:0 auto;
@@ -104,13 +133,7 @@ h1, h2, h3, p {
     color:#9f3c85;
 }
 
-html { 
-  /* background: url(./app/auth/img/brasov.jpg) no-repeat center center fixed;  */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 /* button styling */
 button {
@@ -122,6 +145,17 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+#submitGeo {
+    background-color: #00c08b; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
 }
 
 /* form styling */
@@ -154,6 +188,7 @@ button {
 .form-style-5 input[type="search"],
 .form-style-5 input[type="time"],
 .form-style-5 input[type="url"],
+.form-style-5 input[type="password"],
 .form-style-5 textarea,
 .form-style-5 select {
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -183,6 +218,7 @@ button {
 .form-style-5 input[type="search"]:focus,
 .form-style-5 input[type="time"]:focus,
 .form-style-5 input[type="url"]:focus,
+.form-style-5 input[type="password"]:focus,
 .form-style-5 textarea:focus,
 .form-style-5 select:focus{
     background: #d2d9dd;
@@ -205,29 +241,13 @@ button {
     border-radius: 15px 15px 15px 0px;
 }
 
-.form-style-5 input[type="submit"],
-.form-style-5 input[type="button"]
-{
-    position: relative;
-    display: block;
-    padding: 19px 39px 18px 39px;
-    color: #FFF;
-    margin: 0 auto;
-    background: #df6dc2;
-    font-size: 18px;
-    text-align: center;
-    font-style: normal;
-    width: 100%;
-    border: 1px solid #9f3c85;
-    border-width: 1px 1px 3px;
-    margin-bottom: 10px;
-}
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
     background: #9f3c85;
 }
 
+/* image upload progress bar styling */
 #uploader {
     display: flex;
     padding: 0;
@@ -240,14 +260,18 @@ button {
     margin-bottom: 10px;
 }
 
+/* card styling on list page */
+.tripPhoto {
+    max-width: 300px;
+}
+
 .cardPhoto {
-    /* height: 200px; */
     width: 100%;
     border-radius: 5px 5px 0 0;
 }
 
+/* Add shadows to create the "card" effect */
 .card {
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding-bottom: 15px;
@@ -258,7 +282,6 @@ button {
 
 .columns {
     column-count: 4;
-    /* column-gap: 30%; */
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -277,6 +300,7 @@ button {
     text-decoration: none;
 }
 
+/*  link styling  */
 a:link {
     text-decoration: none;
 }

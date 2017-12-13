@@ -11,8 +11,8 @@ angular
         const trip = {
             "country": $scope.newTrip.country,
             "position": $scope.newTrip.marker,
+            "arrivalDate": $scope.newTrip.arrivalDate,
             "departureDate": $scope.newTrip.departureDate,
-            "returnDate": $scope.newTrip.returnDate,
             "uid": currentUID,
             "photo": $scope.newTrip.photo,
             "rating": targetedStar,
@@ -23,8 +23,8 @@ angular
         TripFactory.add(trip).then(() => {
             $scope.trips.push(trip)
             $scope.newTrip.country = ""
+            $scope.newTrip.arrivalDate = ""
             $scope.newTrip.departureDate = ""
-            $scope.newTrip.returnDate = ""
             $scope.newTrip.listOfMemories = ""
             
             // redirect to map view after submitting form
@@ -104,7 +104,7 @@ angular
     function initMap() {
         let options = {
             center: {lat:26.3351,lng:17.228331000000026},
-            zoom: 2,
+            zoom: 1,
             styles: [
                 {
                     "featureType": "all",
@@ -213,7 +213,7 @@ angular
                 }
             ]
         }
-        let map = new google.maps.Map(document.getElementById("map"), options)
+        let map = new google.maps.Map(document.getElementById("addTripMap"), options)
 
         let geocoder = new google.maps.Geocoder()
 
