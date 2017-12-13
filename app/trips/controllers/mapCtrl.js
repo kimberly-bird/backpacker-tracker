@@ -9,8 +9,8 @@ angular
 
         function initMap() {
             let options = {
-                center: {lat:47.1625,lng:19.5033},
-                zoom: 1,
+                center: {lat:26.3351,lng:17.228331000000026},
+                zoom: 2,
                 styles: [
                     {
                         "featureType": "all",

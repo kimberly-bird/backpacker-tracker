@@ -12,45 +12,38 @@
         <div id="map"></div>
     </div>
 
-    <form class="pure-form pure-form-aligned">
-        <fieldset>
-            <br>
-            <div class="pure-control-group">
-                <label for="country">Country</label>
-                <input type="text" ng-model="newTrip.country">
-            </div>
-            <br>
-            <div class="pure-control-group">
-                <label for="departure">Departure Date</label>
-                <input type="date" ng-model="newTrip.departureDate" />
-            </div>
-            <br>
-            <div class="pure-control-group">
-                <label for="return">Return Date</label>
-                <input type="date" ng-model="newTrip.returnDate" />
-            </div>
-            <br>
-            <div class="starRating pure-control-group">
-                <label for="rating">Rate your trip</label>
-                <span class="fa fa-star " id="star_1" ng-click="starClicked($event)"></span>
-                <span class="fa fa-star " id="star_2" ng-click="starClicked($event)"></span>
-                <span class="fa fa-star " id="star_3" ng-click="starClicked($event)"></span>
-                <span class="fa fa-star " id="star_4" ng-click="starClicked($event)"></span>
-                <span class="fa fa-star " id="star_5" ng-click="starClicked($event)"></span>
-            </div>
-            <br>
-            <div class="pure-control-group">
-                <label for="memories">List out your favorite trip memories (separate by comma)</label>
-                <textarea  ng-model="newTrip.listOfMemories"></textarea>
-            </div>
-            <div class="pure-control-group">
-                <label for="photo">Choose your favorite trip photo</label>
-                <progress value="0" max="100" id="uploader">0%</progress>
-                <input type="file" value="upload" id="fileButton" class="button"></input>
-            </div>
-            <br>
+    <div class="form-style-5">
+        <form>
+            <fieldset>
+                <legend><span class="number">1</span> Trip Details</legend>
+                <input type="text" ng-model="newTrip.country" name="field1" placeholder="Country">
+                <!-- need to change this in controller to be the arrival date -->
+                <input type="date" ng-model="newTrip.departureDate" name="field2" placeholder="Arrival Date">
+                <!-- need to change this in controller to be the departure date -->
+                <input type="date" ng-model="newTrip.returnDate" name="field3" placeholder="Departure Date">
+                
+                <legend><span class="number">2</span> Rate Your Trip</legend>
+                <div class="starRating">
+                    <span class="fa fa-star " id="star_1" ng-click="starClicked($event)"></span>
+                    <span class="fa fa-star " id="star_2" ng-click="starClicked($event)"></span>
+                    <span class="fa fa-star " id="star_3" ng-click="starClicked($event)"></span>
+                    <span class="fa fa-star " id="star_4" ng-click="starClicked($event)"></span>
+                    <span class="fa fa-star " id="star_5" ng-click="starClicked($event)"></span>
+                </div>
+                <br>
+                <legend><span class="number">3</span> Trip Memories</legend>
+                <textarea  ng-model="newTrip.listOfMemories" name="field3" placeholder="List out your favorite trip memories (separate by comma)"></textarea>
+
+                <legend><span class="number">4</span> Choose your favorite trip photo</legend>
+                <div>
+                    <progress value="0" max="100" id="uploader">0%</progress>
+                    <input type="file" value="upload" id="fileButton"></input>
+                </div>
+                <br>
+            </fieldset>
             <button ng-click="addTrip()">Add Trip</button>
-        </fieldset>
-    </form>
+        </form>
+    </div>
 
 </section>
+

@@ -103,8 +103,8 @@ angular
     // map function
     function initMap() {
         let options = {
-            center: {lat:47.1625,lng:19.5033},
-            zoom: 1,
+            center: {lat:26.3351,lng:17.228331000000026},
+            zoom: 2,
             styles: [
                 {
                     "featureType": "all",
@@ -235,7 +235,7 @@ angular
             let marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location, 
-                content: `<div ><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
+                content: `<div ng-repeat="currentTrip in trips"><a href="#!/trips/detail/{{ currentTrip.id }}">View Trip</a></div>`,
                 icon: './app/trips/img/rsz_1small_pin.png'
             })
             $scope.newTrip.marker = marker.position
@@ -243,11 +243,10 @@ angular
             let infoWindow = new google.maps.InfoWindow({
                 content: marker.content
             })
-            // listens to marker click and displays info window
+            //  listen to click on marker to display info window
             marker.addListener("click", function(){
                 infoWindow.open(map, marker)
             })
-      
             } else {
             alert('Geocode was not successful for the following reason: ' + status);
             }
