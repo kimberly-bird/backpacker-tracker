@@ -326,12 +326,12 @@ a {
 }
 
 .header {
-    background-color: #f8c54d;
+    background-color: #f8c54da8;
     padding: 5px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    color: white;
+    color: rgb(94, 93, 93);
     font-size: 1.35em;
     margin-top: -35px;
 }
