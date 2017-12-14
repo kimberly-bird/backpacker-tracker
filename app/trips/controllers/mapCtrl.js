@@ -143,12 +143,17 @@ angular
                 let marker = new google.maps.Marker({
                     position: properties.position,
                     map:map,
-                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip ${ country }</a></div>`,
+                    content: `<div><a href="#!/trips/detail/${ properties.id }">View Trip ${ properties.country }</a></div>`,
                     icon: './app/trips/img/rsz_1small_pin.png'
                 })
         
                 let infoWindow = new google.maps.InfoWindow({
-                    content: `<div ><a href="#!/trips/detail/${ properties.id }">View Trip</a></div>`,
+                    content: 
+                    `<div id="iw-container">
+                        <a href="#!/trips/detail/${ properties.id }"> 
+                        <div class="iw-title">${ properties.country }</div> 
+                        <div class="iw-subTitle">View Trip</a></div>
+                    </div>`,
                     icon: './app/trips/img/rsz_1small_pin.png'
                 })
         

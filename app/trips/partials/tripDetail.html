@@ -1,9 +1,10 @@
 <section>
 
+    <h1>{{ trip.country }}</h1>
+    
     <div class="tripCard">
         <img class="tripPhoto" ng-src="{{ trip.photo }}">
         <div class="tripContainer">
-            <h1>{{ trip.country }}</h1>
             
             <h3>Arrived on {{ trip.arrivalDate | date:"fullDate" }}</h3>
             <h3>Departed on {{ trip.departureDate | date:"fullDate" }}</h3>

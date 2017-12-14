@@ -53,6 +53,26 @@ h1, h2, h3, p {
     margin-right: auto;
 }
 
+/* map info window stylilng */
+
+#iw-container .iw-title {
+	font-size: 20px;
+	font-weight: 400;
+	padding: 5px;
+	background-color: #9f3c85;
+	color: white;
+	margin: 0;
+    border-radius: 5px;
+}
+
+.iw-subTitle {
+	font-size: 12px;
+	font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}
+
+
 /* Geocode styling */
 #floating-panel {
     position: absolute;
@@ -243,7 +263,7 @@ button {
     border-radius: 5px 5px 0 0;
 }
 
-/* Add shadows to create the "card" effect */
+/* card styling on list trip page */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -255,6 +275,7 @@ button {
     break-inside: avoid-column;
 }
 
+/* card styling on detail trip page */
 .tripCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
