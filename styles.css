@@ -56,7 +56,7 @@ h1, h2, h3, p {
 /* Geocode styling */
 #floating-panel {
     position: absolute;
-    top: 225px;
+    top: 275px;
     left: 45%;
     z-index: 5;
     background-color: #fff;
@@ -87,53 +87,37 @@ h1, h2, h3, p {
     padding: 10px;
 }
 
-.navContainer li:first-child {
-    margin-left: auto;
-}
-
 #colorNav > ul{
     width: 450px;
-    margin: 0 auto;
 }
 
-#colorNav li.green{
-    /* This is the color of the menu item */
-    background-color:#00c08b;
-    margin-bottom: 60px;
+#colorNav li.list{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
     
-    /* This is the color of the icon */
-    color:#127a5d;
-}
-
-#colorNav li.red{
-    /* This is the color of the menu item */
-    background-color:#ea5080;
-    margin-bottom: 60px;
-    
-    /* This is the color of the icon */
-    color:#aa2a52;
-}
-
-#colorNav li.yellow{
-    /* This is the color of the menu item */
-    background-color:#f8c54d;
-    margin-bottom: 60px;
-    
-    /* This is the color of the icon */
-    color:#ab8426;
-}
-
-#colorNav li.purple{
-    /* This is the color of the menu item */
-    background-color:#df6dc2;
-    margin-bottom: 60px;
-
     /* This is the color of the icon */
     color:#9f3c85;
 }
 
 .logo {
-    max-height: 65px;
+    max-height: 50px;
+    margin-bottom: 10px;
+    margin-right: 45px;
+}
+
+.header {
+    background: rgb(109, 108, 108) ;
+    padding: 5px;
+    width: 90%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.35em;
+    margin-top: -35px;
+    border-radius: 30px 0px 30px 0px;
+    line-height: 50%;
 }
 
 /* button styling */
@@ -297,7 +281,7 @@ button {
     padding: 2px 16px;
     position: relative;
     bottom: 60px;
-    background-color: #aa2a55d0;
+    background-color: #00c08a9a;
     margin-bottom: -45px;
     text-align: center;
     text-decoration: none;  
@@ -325,15 +309,6 @@ a {
     margin-left: -40px;
 }
 
-.header {
-    background-color: #f8c54da8;
-    padding: 5px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(94, 93, 93);
-    font-size: 1.35em;
-    margin-top: -35px;
-}
+
 
 
