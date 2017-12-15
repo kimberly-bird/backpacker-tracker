@@ -85,9 +85,6 @@ angular
         function error(err) {
             alert("Oops! Your image didn't upload. Please try again.")
         })
-        // function complete () {
-        //     alert("Great! Your photo has been uploaded.")
-        // })
 
         // upload photo to firebase
         task.then(function (snapshot) {
