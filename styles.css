@@ -76,7 +76,7 @@ h1, h2, h3, p {
 /* Geocode styling */
 #floating-panel {
     position: absolute;
-    top: 275px;
+    top: 250px;
     left: 45%;
     z-index: 5;
     background-color: #fff;
@@ -130,7 +130,7 @@ h1, h2, h3, p {
     background: rgb(109, 108, 108) ;
     padding: 5px;
     width: 90%;
-    height: 90px;
+    height: 50%;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -281,7 +281,7 @@ button {
     transition: 0.3s;
     padding-bottom: 15px;
     margin-bottom: 25px;
-    width: 40%;
+    width: 50%;
     break-inside: avoid-column;
     margin-left: auto;
     margin-right: auto;
@@ -312,9 +312,8 @@ button {
 .tripContainer {
     padding: 2px 16px;
     position: relative;
-    bottom: 60px;
+    bottom: 4px;
     background-color: rgba(146, 146, 146, 0.6);
-    margin-bottom: -45px;
     text-align: center;
     text-decoration: none;
 }
