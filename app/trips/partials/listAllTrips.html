@@ -7,6 +7,14 @@
     <div class="form-style-5">
         <input type="text" ng-model="query" placeholder="Search">
     </div>
+    
+    <!-- needs work to sort by rating -->
+    <!-- <div class="form-style-5">
+        <select ng-model="trips.rating">
+            <option value="-rating">Rating High to Low</option>
+            <option value="rating">Rating Low to High</option>
+        </select>
+    </div> -->
 
     <section class="columns">
         <div ng-repeat="currentTrip in trips | filter: query" class="card">

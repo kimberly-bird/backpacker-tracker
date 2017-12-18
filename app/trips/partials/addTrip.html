@@ -7,7 +7,10 @@
         <div class="form-style-5">
             <form>
                 <fieldset>
-                    <legend><span class="number">1</span> Enter (city and/or country) to add the location of your trip.</legend>
+                    <legend><span class="number">1</span> Add your trip title</legend>
+                    <input type="text" ng-model="newTrip.country" name="field1" placeholder="Trip Title">
+
+                    <legend><span class="number">2</span> Search to add the location of your trip</legend>
                     <div id="floating-panel">
                         <input id="address" type="textbox" value="" placeholder="Search">
                         <input id="submit" type="button" value="Geocode">
@@ -15,14 +18,11 @@
                     
                     <div id="addTripMap"></div>
                     <br>
-                    <legend><span class="number">2</span> Trip Details</legend>
-                    <input type="text" ng-model="newTrip.country" name="field1" placeholder="Country">
-                    <!-- need to change this in controller to be the arrival date -->
+                    <legend><span class="number">3</span> Trip Dates</legend>
                     Arrival Date <input type="date" ng-model="newTrip.arrivalDate" name="field2" placeholder="Arrival Date">
-                    <!-- need to change this in controller to be the departure date -->
                     Departure Date <input type="date" ng-model="newTrip.departureDate" name="field3" placeholder="Departure Date">
                     
-                    <legend><span class="number">3</span> Rate Your Trip</legend>
+                    <legend><span class="number">4</span> Rate Your Trip</legend>
                     <div class="starRating">
                         <span class="fa fa-star fa-2x " id="star_1" ng-click="starClicked($event)"></span>
                         <span class="fa fa-star fa-2x " id="star_2" ng-click="starClicked($event)"></span>
@@ -32,17 +32,18 @@
                     </div>
                     <br>
                     <br>
-                    <legend><span class="number">4</span> Trip Memories</legend>
+
+                    <legend><span class="number">5</span> Trip Memories</legend>
                     <textarea  ng-model="newTrip.listOfMemories" name="field3" placeholder="List out your favorite trip memories (separate by comma)"></textarea>
 
-                    <legend><span class="number">5</span> Choose your favorite trip photo</legend>
+                    <legend><span class="number">6</span> Choose your favorite trip photo</legend>
                     <div>
                         <progress value="0" max="100" id="uploader">0%</progress>
                         <input type="file" value="upload" id="fileButton"></input>
                     </div>
                     <br>
                 </fieldset>
-                <button ng-click="addTrip()">Add Trip</button>
+                <button ng-click="addTrip()"><i class="fa fa-check"></i> Add Trip</button>
             </form>
         </div>
     </div>
