@@ -1,7 +1,6 @@
 angular
 .module("backpackerApp")
 .controller("tripDetailCtrl",
-// $routeParams holds the URL that catches the id from :tripId
     function ($scope, $routeParams, TripFactory, $location) {
         
         $scope.trip = {}
@@ -14,9 +13,11 @@ angular
             // binds scope to trip
             $scope.trip = trip
         })        
-
+        
+        // splits photo array on the ,
         TripFactory.single($routeParams.tripId).then(image => {
             image.photo = image.photo.split(",")
+            // binds scope to image
             $scope.image = image
         })
 

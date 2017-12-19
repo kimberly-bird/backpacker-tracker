@@ -1,3 +1,4 @@
+<!-- Detailed information about a specific trip -->
 <section>
     
     <div class="tripContainer">
@@ -6,34 +7,37 @@
                 <h1>{{ trip.country }} <i class="fa fa-flag-o" aria-hidden="true"></i></h1>
         </div>
         
-        <div>
-            <ul ng-repeat="currentPhoto in image.photo track by $index">
-                <li class="liPhoto">
-                    <img class="tripPhoto" src="{{ currentPhoto }}" align="left">
-                </li>
-            </ul>
-        </div>
-        
-        <div>
-            <h3>Arrived on {{ trip.arrivalDate | date:"fullDate" }}</h3>
-            <h3>Departed on {{ trip.departureDate | date:"fullDate" }}</h3>
-    
-            <div class="starRating">
-                <h3>Trip Rating</h3>
-                <span id="star_1" ng-class="trip.rating >= 1 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
-                <span id="star_2" ng-class="trip.rating >= 2 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
-                <span id="star_3" ng-class="trip.rating >= 3 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
-                <span id="star_4" ng-class="trip.rating >= 4 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
-                <span id="star_5" ng-class="trip.rating >= 5 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+        <div class="detailRow">
+            <div class="detailColumn left">
+                <ul ng-repeat="currentPhoto in image.photo track by $index">
+                    <li class="liPhoto">
+                        <img class="tripPhoto" src="{{ currentPhoto }}" align="left">
+                    </li>
+                </ul>
             </div>
             
-            <h3>Your favorite memories </h3>
-            <ul class="memoryList" ng-repeat="memory in trip.listOfMemories track by $index">
-                <li >{{ memory }}</li>
-            </ul>    
-        </div>
+            <div class="detailColumn right">
+                <h3>Arrived on {{ trip.arrivalDate | date:"fullDate" }}</h3>
+                <h3>Departed on {{ trip.departureDate | date:"fullDate" }}</h3>
         
-        <button ng-click="deleteTrip()">Delete Trip</button>
+                <div class="starRating">
+                    <h3>Trip Rating</h3>
+                    <span id="star_1" ng-class="trip.rating >= 1 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+                    <span id="star_2" ng-class="trip.rating >= 2 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+                    <span id="star_3" ng-class="trip.rating >= 3 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+                    <span id="star_4" ng-class="trip.rating >= 4 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+                    <span id="star_5" ng-class="trip.rating >= 5 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
+                </div>
+                
+                <h3>Your favorite memories </h3>
+                <ul class="memoryList" ng-repeat="memory in trip.listOfMemories track by $index">
+                    <li >{{ memory }}</li>
+                </ul>    
+                
+                <!-- delete trip button -->
+                <button ng-click="deleteTrip()">Delete Trip</button>
+            </div>
+        </div>
     </div>
         
 </section>

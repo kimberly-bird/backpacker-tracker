@@ -6,13 +6,6 @@ function ($scope, $location, AuthFactory) {
     */
     $scope.isAuthenticated = () => AuthFactory.isAuthenticated();
 
-    // $scope.finder = event => {
-    //     if (event.key === "Enter") {
-    //         const employee = TripFactory.find($scope.searchString)
-    //         $location.url(`/employees/detail/${employee.id}`)
-    //     }
-    // }
-
     /*
     Unauthenticate the client.
     */

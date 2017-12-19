@@ -1,8 +1,6 @@
-body, a, ul, li, .navItem {
-    font-family: 'Spinnaker', sans-serif;
-    /* font-family: 'Rubik', sans-serif; */
-    /* font-family: 'Slabo 27px', serif; */
-}
+/* -------------- 
+Main Site Styles 
+----------------*/
 
 body {
     background-color: #e8eeef;
@@ -19,85 +17,27 @@ html, body {
     padding: 0px;
 }
 
+/* font */
+body, a, ul, li, .navItem {
+    font-family: 'Spinnaker', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
+    /* font-family: 'Slabo 27px', serif; */
+}
+
 h1, h2, h3, p {
     text-align: center;
 }
 
-.footer {
-    display: block;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-}
-
-/* changes color of star based on # stars clicked */
-.checked {
-    color:orange;
-}
-
-/*  map styling  */
-#map {
-    width: 85%;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-#addTripMap {
-    width: 85%;
-    height: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-}
-
-/* map info window stylilng */
-#iw-container .iw-title {
-	font-size: 20px;
-	font-weight: 400;
-	padding: 5px;
-	background-color: #9f3c85;
-	color: white;
-	margin: 0;
-    border-radius: 5px;
-}
-
-.iw-subTitle {
-	font-size: 12px;
-	font-weight: 700;
-    padding: 5px;
-    text-align: center;
+/*  link styling  */
+a {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
 }
 
 
-/* Geocode styling */
-#floating-panel {
-    position: absolute;
-    top: 325px;
-    left: 45%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    line-height: 30px;
-    padding-left: 10px;
-}
-   
-.panel-default {
-    opacity: 0.9;
-    margin-top:30px;
-}
-
-.form-group.last {
-    margin-bottom:0px;
-}
-
-/* nav styles */
+/* -------------------
+nav styles
+--------------------- */
 .navContainer {
     display: flex;
     flex-direction: row-reverse;
@@ -128,6 +68,7 @@ h1, h2, h3, p {
     margin-right: 45px;
 }
 
+/* Header styling on home, add trip, and list trip pages */
 .header {
     background: rgb(109, 108, 108) ;
     padding: 5px;
@@ -142,13 +83,103 @@ h1, h2, h3, p {
     line-height: 50%;
 }
 
+/* Header styling on detail trip pages */
 .headerDetail {
     color: #9f3c85;
     font-size: 1.35em;
     border: 15px solid rgba(179, 178, 178, 0.445);
 }
 
-/* button styling */
+/* footer */
+.footer {
+    display: block;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/*  ----------
+map styling
+--------------  */
+
+/* home page map */
+#map {
+    width: 85%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* add trip map */
+#addTripMap {
+    width: 85%;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+/* map info window */
+#iw-container .iw-title {
+	font-size: 20px;
+	font-weight: 400;
+	padding: 5px;
+	background-color: #9f3c85;
+	color: white;
+	margin: 0;
+    border-radius: 5px;
+}
+
+.iw-subTitle {
+	font-size: 12px;
+	font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}
+
+
+/* ----------------------
+Geocode styling 
+------------------------*/
+#floating-panel {
+    position: absolute;
+    top: 325px;
+    left: 45%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+}
+   
+.panel-default {
+    opacity: 0.9;
+    margin-top:30px;
+}
+
+.form-group.last {
+    margin-bottom:0px;
+}
+
+/* ---------------------
+Star rating styles 
+Add Trip + Trip Details
+------------------------ */
+/* changes color of star based on # stars clicked */
+.checked {
+    color:orange;
+}
+
+/* --------------------
+button styling 
+----------------------*/
 button {
     background-color: #00c08b; 
     border: none;
@@ -160,7 +191,9 @@ button {
     font-size: 16px;
 }
 
-/* form styling */
+/* -------------------
+form styling 
+---------------------*/
 .form-style-5{
     max-width: 500px;
     padding: 10px 20px;
@@ -183,12 +216,8 @@ button {
 }
 .form-style-5 input[type="text"],
 .form-style-5 input[type="date"],
-.form-style-5 input[type="datetime"],
 .form-style-5 input[type="email"],
-.form-style-5 input[type="number"],
 .form-style-5 input[type="search"],
-.form-style-5 input[type="time"],
-.form-style-5 input[type="url"],
 .form-style-5 input[type="password"],
 .form-style-5 textarea,
 .form-style-5 select {
@@ -207,26 +236,24 @@ button {
     color:#8a97a0;
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
-    
+    margin-bottom: 30px;    
 }
+
 .form-style-5 input[type="text"]:focus,
 .form-style-5 input[type="date"]:focus,
-.form-style-5 input[type="datetime"]:focus,
 .form-style-5 input[type="email"]:focus,
-.form-style-5 input[type="number"]:focus,
 .form-style-5 input[type="search"]:focus,
-.form-style-5 input[type="time"]:focus,
-.form-style-5 input[type="url"]:focus,
 .form-style-5 input[type="password"]:focus,
 .form-style-5 textarea:focus,
 .form-style-5 select:focus{
     background: #d2d9dd;
 }
+
 .form-style-5 select{
     -webkit-appearance: menulist-button;
     height:35px;
 }
+
 .form-style-5 .number {
     background: #9f3c85;
     color: #fff;
@@ -247,7 +274,10 @@ button {
     background: #9f3c85;
 }
 
-/* image upload progress bar styling */
+/* --------------------------
+Add trip specific styles 
+-----------------------------*/
+/* image upload progress bar styling on add trip page */
 #uploader {
     display: flex;
     padding: 0;
@@ -260,18 +290,9 @@ button {
     margin-bottom: 10px;
 }
 
-/* photo styling on detail page */
-.tripPhoto {
-    /* width: 40%; */
-    max-height: 350px;
-    max-width: 450px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
+/* --------------------------
+List all trips specific styles 
+-----------------------------*/
 /* card styling on list page */
 .cardPhoto {
     width: 100%;
@@ -290,7 +311,7 @@ button {
     break-inside: avoid-column;
 }
 
-/* column styling for list and detail page */
+/* column styling for list page */
 @media (max-width: 1800px) {
     .columns {
     -moz-column-count:    4;
@@ -337,6 +358,22 @@ button {
     font-size: 2em;
 }
 
+
+/* --------------------------
+Detail trip specific styles 
+-----------------------------*/
+/* photo styling on detail page */
+.tripPhoto {
+    /* width: 40%; */
+    max-height: 350px;
+    max-width: 450px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
 /* detail page styling for content (not photos) */
 .tripContainer {
     padding: 20px 18px;
@@ -350,20 +387,33 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-/*  link styling  */
-a {
-    text-decoration: none;
-    color: rgb(66, 66, 66);
-}
-
 .memoryList li {
     list-style-type: none;
-    margin-left: -80px;
+    margin-left: -45px;
 }
 
 .liPhoto {
     list-style-type: none;
 }
 
+.detailColumn {
+    float: left;
+    /* width: 50%; */
+    padding: 10px;
+}
+
+.detailRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left {
+    width: 60%;
+}
+
+.right {
+    width: 30%;
+}
 
 

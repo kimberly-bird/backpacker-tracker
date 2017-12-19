@@ -1,4 +1,3 @@
-// trip factory is being injected. 
 angular
 .module("backpackerApp")
 // name of factory gets injected as a parameter to be used in the controller 

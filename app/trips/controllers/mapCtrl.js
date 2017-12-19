@@ -7,6 +7,7 @@ angular
         $scope.marker = []
         let country = $scope.country
 
+        // google map function
         function initMap() {
             let options = {
                 center: {lat:26.3351,lng:17.228331000000026},
@@ -121,12 +122,6 @@ angular
             }
             let map = new google.maps.Map(document.getElementById("map"), options)
 
-            // listen for click on map - change to connect to a trip detail
-            // google.maps.event.addListener(map, "click", function (event) {
-            //     // add marker to map
-            //     addMarker({coordinates:event.latLng, content:"<h4>View Trip</h4>"})
-            // })
-
             // get results from firebase
             TripFactory.list().then(result => {
                 $scope.marker = result
@@ -139,7 +134,7 @@ angular
         
             // add marker function
             function addMarker (properties) {
-                // debugger
+
                 let marker = new google.maps.Marker({
                     position: properties.position,
                     map:map,

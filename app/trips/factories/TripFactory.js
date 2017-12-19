@@ -6,6 +6,7 @@ angular
             value: null,
             writable: true
         },
+        // function to GET all trips for authenticated user
         "list": {
             value: function () {
                 return $http.get(`https://backpacker-tracker.firebaseio.com/trips.json?orderBy="uid"&equalTo="${AuthFactory.getUser().uid}"`
@@ -21,6 +22,7 @@ angular
                 })
             }
         },
+        // function to GET specific trip based on key
         "single": {
             value: function (key) {
                 return $http({
@@ -31,6 +33,7 @@ angular
                 })
             }
         },
+        // function to POST new trip to Firebase
         "add": {
             value: function (trip) {
                 return firebase.auth().currentUser.getIdToken(true)
@@ -46,20 +49,12 @@ angular
                 })
             }
         },
+        // function to DELETE trip based on key
         "delete": {
             value: function (key) {
                 return $http({
                     method: "DELETE",
                     url: `https://backpacker-tracker.firebaseio.com/trips/${key}/.json`
-                })
-            }
-        },
-        "edit": {
-            value: function (trip, key) {
-                return $http({
-                    method: "PUT",
-                    url: `https://backpacker-tracker.firebaseio.com/trips/${key}/.json`,
-                    data: trip
                 })
             }
         }
