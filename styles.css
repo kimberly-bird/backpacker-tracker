@@ -46,7 +46,8 @@ nav styles
 }
 
 .navItem {
-    padding: 10px;
+    /* padding: 10px; */
+    padding-top: 15px;
 }
 
 #colorNav > ul{
@@ -64,8 +65,8 @@ nav styles
 
 .logo {
     max-height: 50px;
-    margin-bottom: 10px;
-    margin-right: 45px;
+    margin-bottom: 18px;
+    margin-left: 55px;
 }
 
 /* Header styling on home, add trip, and list trip pages */
@@ -189,6 +190,12 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.headerButton {
+    float: right;
+    margin-top: -65px;
+    margin-right: 85px;
 }
 
 /* -------------------

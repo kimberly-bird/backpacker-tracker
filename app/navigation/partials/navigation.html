@@ -1,6 +1,5 @@
 <div>
     <ul ng-controller="NavCtrl" class="navContainer" id="colorNav">
-        <li class="navItem "><img src="./app/auth/img/logo.png" class="logo"></li>
         <li class="navItem list">
             <span ng-iItemf="isAuthenticated()">
                 <i class="fa fa-sign-out"></i><a href="#" ng-click="logout()"> Logout</a>
@@ -9,6 +8,7 @@
         </li>
         <li class="navItem list"><i class="fa fa-map-o"></i><a href="#!/trips/map"> Map View</a></li>
         <li class="navItem list"><i class="fa fa-bars"></i><a href="#!/trips/list"> List View</a></li>
-        <li class="navItem list"><i class="fa fa-plus"></i><a href="#!/trips/new"> Add Trip</a></li>
+        <li class="navItem "><img src="./app/auth/img/logo.png" class="logo"></li>
+        <!-- <li class="navItem list"><i class="fa fa-plus"></i><a href="#!/trips/new"> Add Trip</a></li> -->
     </ul>
 </div>
