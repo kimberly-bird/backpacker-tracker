@@ -14,7 +14,7 @@
     <section class="columns">
         <div ng-repeat="currentTrip in trips | filter: query" class="card">
             <img src="{{ currentTrip.photo }}" class="cardPhoto">
-            <div class="container">
+            <div class="container tripsFont">
                 <a href="#!/trips/detail/{{ currentTrip.id }}">{{ currentTrip.country }}</a>
             </div>
         </div>

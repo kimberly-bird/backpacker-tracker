@@ -3,7 +3,7 @@ Main Site Styles
 ----------------*/
 
 body {
-    background-color: #e8eeef;
+    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 html { 

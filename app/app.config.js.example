@@ -1,7 +1,8 @@
-app.constant("FIREBASE_CONFIG", {
+angular.module("backpackerApp").constant("FIREBASE_CONFIG", {
     apiKey: "",
     authDomain: "",
     databaseURL: "",
+    projectId: "",
     storageBucket: "",
     messagingSenderId: ""
 })
