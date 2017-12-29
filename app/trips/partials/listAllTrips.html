@@ -1,25 +1,26 @@
 <!-- lists all user's trips in a grid -->
 <section>
 
-    <!-- search by trip title -->
+    <!-- header with button to add trip -->
     <div class="header">
         <h3><i class="fa fa-search"></i> My Trips</h3>
         <button class="headerButton"><a href="#!/trips/new"><i class="fa fa-plus"></i> Add a Trip!</a></button>
     </div>
-
+    
+    <!-- search by trip title -->
     <div class="form-style-5">
         <input type="text" ng-model="query" placeholder="Search">
     </div>
 
-    <section class="columns">
-        <div ng-repeat="currentTrip in trips | filter: query" class="card">
-            <img src="{{ currentTrip.photo }}" class="cardPhoto">
-            <div class="container tripsFont">
-                <a href="#!/trips/detail/{{ currentTrip.id }}">{{ currentTrip.country }}</a>
+    <!-- timeline of trips by date, descending -->
+    <div class="timeline">
+        <div class="timelineContainer" ng-repeat="currentTrip in trips | filter: query | orderBy: '-arrivalDate'" ng-class-odd="'timelineRight'" ng-class-even="'timelineLeft'">
+            <div class="content">
+                <h2><a href="#!/trips/detail/{{ currentTrip.id }}" class="timelineFont">{{ currentTrip.country }}</a></h2>
+                <p>{{ currentTrip.arrivalDate | date:"longDate" }}</p>
             </div>
         </div>
-    </section>
-
+    </div>
 
 </section>
 
