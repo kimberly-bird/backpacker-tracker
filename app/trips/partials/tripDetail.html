@@ -20,7 +20,7 @@
                 <h3>Arrived on {{ trip.arrivalDate | date:"longDate" }}</h3>
                 <h3>Departed on {{ trip.departureDate | date:"longDate" }}</h3>
         
-                <div class="starRating">
+                <div>
                     <h3>Trip Rating</h3>
                     <span id="star_1" ng-class="trip.rating >= 1 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>
                     <span id="star_2" ng-class="trip.rating >= 2 ? 'fa fa-star fa-2x checked' : 'fa fa-star fa-2x'"></span>

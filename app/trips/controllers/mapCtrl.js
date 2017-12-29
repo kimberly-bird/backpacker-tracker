@@ -142,6 +142,7 @@ angular
                     icon: './app/trips/img/rsz_1small_pin.png'
                 })
         
+                // display info window content, on click
                 let infoWindow = new google.maps.InfoWindow({
                     content: 
                     `<div id="iw-container">
