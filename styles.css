@@ -3,7 +3,10 @@ Main Site Styles
 ----------------*/
 
 body {
-    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    /* background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%); */
+    background: rgb(207, 207, 207);
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: lighten;
 }
 
 html { 
@@ -20,8 +23,6 @@ html, body {
 /* font */
 body, a, ul, li, .navItem {
     font-family: 'Spinnaker', sans-serif;
-    /* font-family: 'Rubik', sans-serif; */
-    /* font-family: 'Slabo 27px', serif; */
 }
 
 h1, h2, h3, p {

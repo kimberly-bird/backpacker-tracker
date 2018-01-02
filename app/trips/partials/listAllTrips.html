@@ -8,22 +8,22 @@
     </div>
     
     <!-- search by trip title -->
-    <!-- <div class="form-style-5">
+    <div class="form-style-5">
         <input type="text" ng-model="query" placeholder="Search">
-    </div> -->
+    </div>
 
     <!-- timeline of trips by date, sorted descending -->
-    <div class="timeline">
-        <div ng-repeat="(year, trips) in trips | groupBy: '-year'">
-
-        <!-- display year in timeline -->
-        <h1 class="timelineYear">
-            {{ year | ltrim: '-' }}
-        </h1>
+    <!-- <div ng-repeat="(year, trips) in trips | groupBy: '-year'"> -->
         
+        <!-- display year in timeline -->
+        <!-- <h1 class="timelineYear">
+            {{ year | ltrim: '-' }}
+        </h1> -->
+        
+        <div class="timeline">
             <div class="timelineContainer" ng-repeat="currentTrip in trips | orderBy: '-arrivalDate' | filter: query">
+                <div class="content" ng-class-even="'timelineRight'" ng-class-odd="'timelineLeft'" >
             <!-- trip details -->
-            <div class="content" ng-class-even="'timelineRight'" ng-class-odd="'timelineLeft'" >
                     <h2><a href="#!/trips/detail/{{ currentTrip.id }}" class="timelineFont">
                         {{ currentTrip.country }}
                     </a></h2>

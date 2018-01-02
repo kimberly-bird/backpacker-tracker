@@ -15,17 +15,15 @@ angular
 
                     // Array of objects 
                     this.cache = Object.keys(data).map(key => {
-                        data[key].id = key
                         // create date object with year
-                        // debugger
-                        // const theDate = (data[key].arrivalDate)
-                        data[key].year = data[key].arrivalDate.slice(0,4)
+                        data[key].id = key
+                        // data[key].year = data[key].arrivalDate.slice(0,4)
                         return data[key]
                     })
-                    .sort(function(a, b){
-                        return new Date (b.arrivalDate) - new Date (a.arrivalDate)
-                    })
-                    console.log(this.cache)
+                    // .sort(function(a, b){
+                    //     return new Date (b.arrivalDate) - new Date (a.arrivalDate)
+                    // })
+                    // console.log(this.cache)
                     return this.cache
                 })
             }
