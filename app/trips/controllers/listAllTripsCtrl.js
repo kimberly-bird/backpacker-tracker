@@ -9,6 +9,7 @@ angular
     TripFactory.list().then(data => {
         $scope.trips = data
     })
+    
 })
 
 
