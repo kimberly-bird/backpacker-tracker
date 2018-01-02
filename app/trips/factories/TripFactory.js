@@ -15,7 +15,9 @@ angular
 
                     // Array of objects 
                     this.cache = Object.keys(data).map(key => {
+                        const theDate = new Date(data[key].arrivalDate)
                         data[key].id = key
+                        data[key].year = theDate.getFullYear()
                         return data[key]
                     })
                     return this.cache

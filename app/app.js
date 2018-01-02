@@ -1,4 +1,4 @@
-const app = angular.module("backpackerApp", ["ngRoute"])
+const app = angular.module("backpackerApp", ["ngRoute", "angular.filter"])
 
 angular.module("backpackerApp").run(function (FIREBASE_CONFIG) {
     firebase.initializeApp(FIREBASE_CONFIG)

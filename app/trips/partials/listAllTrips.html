@@ -14,18 +14,28 @@
 
     <!-- timeline of trips by date, sorted descending -->
     <div class="timeline">
-        <div class="timelineContainer" ng-repeat="currentTrip in trips | filter: query | orderBy: '-arrivalDate'" ng-class-even="'timelineRight'" ng-class-odd="'timelineLeft'" >
-            <div class="content">
-                <h2><a href="#!/trips/detail/{{ currentTrip.id }}" class="timelineFont">{{ currentTrip.country }}</a></h2>
-                <p><em>{{ currentTrip.arrivalDate | date:"longDate" }}</em></p>
-                <div class="starRating">
-                    <span id="star_1" ng-class="currentTrip.rating >= 1 ? 'fa fa-star checked' : 'fa fa-star'"></span>
-                    <span id="star_2" ng-class="currentTrip.rating >= 2 ? 'fa fa-star checked' : 'fa fa-star'"></span>
-                    <span id="star_3" ng-class="currentTrip.rating >= 3 ? 'fa fa-star checked' : 'fa fa-star'"></span>
-                    <span id="star_4" ng-class="currentTrip.rating >= 4 ? 'fa fa-star checked' : 'fa fa-star'"></span>
-                    <span id="star_5" ng-class="currentTrip.rating >= 5 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+        <div class="timelineContainer" 
+            ng-repeat="(year, trips) in trips | orderBy: '-arrivalDate' | groupBy: 'year' " 
+            ng-class-even="'timelineRight'" ng-class-odd="'timelineLeft'" >
+
+            <!-- display year in timeline -->
+            <h1>{{ year }}</h1>
+
+            <div ng-repeat="currentTrip in trips">
+                <!-- trip details -->
+                <div class="content">
+                    <h2><a href="#!/trips/detail/{{ currentTrip.id }}" class="timelineFont">{{ currentTrip.country }}</a></h2>
+                    <p><em>{{ currentTrip.arrivalDate | date:"longDate" }}</em></p>
+                    <div class="starRating">
+                        <span id="star_1" ng-class="currentTrip.rating >= 1 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+                        <span id="star_2" ng-class="currentTrip.rating >= 2 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+                        <span id="star_3" ng-class="currentTrip.rating >= 3 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+                        <span id="star_4" ng-class="currentTrip.rating >= 4 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+                        <span id="star_5" ng-class="currentTrip.rating >= 5 ? 'fa fa-star checked' : 'fa fa-star'"></span>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 
