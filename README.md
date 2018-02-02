@@ -21,3 +21,15 @@ This is an app to add past trips to track experiences abroad.
 * Timeline: The timeline view displays all user's trips in descending order. User may search by trip title to filter down. User may click trip title to visit details of trip.
 * Trip detail page: When user clicks an individual trip title from the map or timeline view, user is taken to the details of that trip. All information user entered when they created the trip is displayed. User may also delete the trip from this page and the data is removed from Firebase storage.
 
+### Homepage / Map View
+![homepageImage](./app/trips/img/homepage.png)
+
+### Add Trip
+![Addtrip](./app/trips/img/add.png)
+
+### Timeline View
+![TimelineView](./app/trips/img/timeline.png)
+
+### Detail View
+![detailView](./app/trips/img/detail.png)
+
