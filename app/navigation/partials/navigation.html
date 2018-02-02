@@ -1,14 +1,24 @@
 <!-- navigation for all site -->
-<div>
-    <ul ng-controller="NavCtrl" class="navContainer" id="colorNav">
+<div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li class="navItem list">
             <span ng-iItemf="isAuthenticated()">
-                <i class="fa fa-sign-out fa-2x"></i><a href="#" ng-click="logout()"> Logout</a>
+                <i class="fa fa-sign-out fa-2x"></i>
+                <a href="#" ng-click="logout()"> Logout</a>
             </span>
             <span ng-if="!isAuthenticated()"></span>
         </li>
-        <li class="navItem list"><i class="fa fa-map-o fa-2x"></i><a href="#!/trips/map"> Map </a></li>
-        <li class="navItem list"><i class="fa fa-th-list fa-2x"></i><a href="#!/trips/list"> Timeline</a></li>
-        <li class="navItem "><img src="./app/auth/img/logo.png" class="logo"></li>
+        <li class="navItem list">
+            <i class="fa fa-map-o fa-2x"></i>
+            <a href="#!/trips/map"> Map </a>
+        </li>
+        <li class="navItem list">
+            <i class="fa fa-th-list fa-2x"></i>
+            <a href="#!/trips/list"> Timeline</a>
+        </li>
+        <li class="navItem ">
+            <img src="./app/auth/img/logo.png" class="logo">
+        </li>
     </ul>
 </div>
